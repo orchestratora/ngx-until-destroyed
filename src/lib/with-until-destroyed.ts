@@ -1,6 +1,6 @@
-import { isObservable, Observable } from 'rxjs';
+import { isObservable } from 'rxjs';
 
-import { untilDestroyed } from './take-until-destroy';
+import { untilDestroyed } from './until-destroyed';
 
 /**
  * Automatically unsubscribes from pipe when component destroyed.
@@ -21,18 +21,20 @@ import { untilDestroyed } from './take-until-destroy';
  *
  * Do not forget to implement {@link OnDestroy} life-cycle hook.
  */
-export function WithUntilDestroyed(destroyMethodName?: string): PropertyDecorator {
+export function WithUntilDestroyed(
+  destroyMethodName?: string,
+): PropertyDecorator {
   return function(target, propKey) {
-    const valKey = `__WithUntilDestroyed:${String(propKey)}__`;
+    const valueKey = `__WithUntilDestroyed:${String(propKey)}__`;
 
-    function getter() {
-      return this[valKey];
+    function getter(this: any) {
+      return this[valueKey];
     }
 
-    function setter(newVal) {
+    function setter(this: any, newVal: any) {
       if (isObservable(newVal)) {
-        delete this[valKey];
-        Object.defineProperty(this, valKey, {
+        delete this[valueKey];
+        Object.defineProperty(this, valueKey, {
           configurable: true,
           enumerable: false,
           value: newVal.pipe(untilDestroyed(this, destroyMethodName)),
@@ -46,7 +48,7 @@ export function WithUntilDestroyed(destroyMethodName?: string): PropertyDecorato
       }
     }
 
-    if (delete target[propKey]) {
+    if (delete (target as any)[propKey]) {
       Object.defineProperty(target, propKey, {
         enumerable: true,
         configurable: true,

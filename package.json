@@ -1,46 +1,30 @@
 {
-  "name": "ngx-take-until-destroy",
-  "version": "5.3.1",
-  "description": "RxJS operator that unsubscribes when component destroyed",
-  "license": "MIT",
+  "name": "@orchestrator/ngx-until-destroyed",
+  "version": "0.0.0",
   "scripts": {
-    "build": "ng-packagr -p package.json && rm dist/ngx-take-until-destroy.metadata.json",
-    "test": "jest --env=node"
-  },
-  "ngPackage": {
-    "lib": {
-      "entryFile": "public_api.ts"
-    }
-  },
-  "maintainers": [
-    "Netanel Basal"
-  ],
-  "repository": {
-    "url": "https://github.com/NetanelBasal/ngx-take-until-destroy"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "js"
-    ],
-    "transform": {
-      "\\.(ts)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-    },
-    "testRegex": "/__tests__/.*\\.(ts|js)$"
-  },
-  "peerDependencies": {
-    "rxjs": "^6.0.0"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "prebuild": "rimraf dist",
+    "build": "run-p build:*",
+    "build:lib": "tsc -p src/tsconfig.lib.json",
+    "build:bundles": "rollup -c rollup.config.js",
+    "pack": "copyfiles -f src/package.json README.md LICENSE dist"
   },
   "devDependencies": {
-    "@angular/compiler": "^6.1.9",
-    "@angular/compiler-cli": "^6.1.9",
-    "@angular/core": "^6.1.9",
-    "@types/jest": "^22.0.1",
-    "@types/node": "^10.1.4",
-    "jest": "^22.0.5",
-    "ng-packagr": "^4.2.0",
-    "rxjs": "6.2.2",
-    "ts-jest": "^22.4.6",
-    "typescript": "^2.7.2"
+    "@types/jest": "^23.3.12",
+    "@types/node": "^10.12.18",
+    "copyfiles": "^2.1.0",
+    "jest": "^23.6.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.1.0",
+    "rollup-plugin-typescript": "^1.0.0",
+    "rxjs": "^6.3.3",
+    "rxjs-tslint": "^0.1.6",
+    "ts-jest": "^23.10.5",
+    "tslib": "^1.9.3",
+    "tslint": "^5.12.1",
+    "typescript": "^3.2.2"
   }
 }

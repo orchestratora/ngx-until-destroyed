@@ -1,7 +1,7 @@
 import { EMPTY, Observable, Subject } from 'rxjs';
 
-import { WithUntilDestroyed } from '../src/decorator';
-import * as untilDestroyedObj from '../src/take-until-destroy';
+import * as untilDestroyedObj from './until-destroyed';
+import { WithUntilDestroyed } from './with-until-destroyed';
 
 describe('@WithUntilDestroyed decorator', () => {
   it('should throw when applied on non Observable prop', () => {

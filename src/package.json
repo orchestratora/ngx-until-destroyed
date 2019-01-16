@@ -1,0 +1,24 @@
+{
+  "name": "@orchestrator/ngx-until-destroyed",
+  "version": "0.0.0",
+  "description": "RxJS operator that unsubscribes from observable on Angular component destruction",
+  "license": "MIT",
+  "main": "dist/bundles/umd.js",
+  "module": "dist/bundles/esm5.js",
+  "es2015": "dist/bundles/esm2015.js",
+  "typings": "dist/public_api.d.ts",
+  "types": "dist/public_api.d.ts",
+  "sideEffects": false,
+  "maintainers": [
+    "Alex Malkevich <malkevich.alex@gmail.com>"
+  ],
+  "contributors": [
+    "Netanel Basal"
+  ],
+  "repository": {
+    "url": "https://github.com/orchestratora/ngx-until-destroyed"
+  },
+  "peerDependencies": {
+    "rxjs": "^6.0.0"
+  }
+}

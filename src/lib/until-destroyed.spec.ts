@@ -1,5 +1,6 @@
 import { Subject } from 'rxjs';
-import { untilDestroyed } from '../src/take-until-destroy';
+
+import { untilDestroyed } from './until-destroyed';
 
 function createObserver() {
   return {
@@ -15,11 +16,11 @@ describe('untilDestroyed', () => {
     const spy2 = createObserver();
 
     class Test {
-      obs;
+      obs: any;
 
       ngOnDestroy() {}
 
-      subscribe( spy ) {
+      subscribe(spy: any) {
         this.obs = new Subject().pipe(untilDestroyed(this)).subscribe(spy);
       }
     }
@@ -61,9 +62,7 @@ describe('untilDestroyed', () => {
     class Test {
       obs = new Subject().pipe(untilDestroyed(this, 'destroy')).subscribe(spy);
 
-      destroy() {
-        console.log('called');
-      }
+      destroy() {}
     }
 
     const instance = new Test();
@@ -112,7 +111,7 @@ describe('it should throw', () => {
     expect(function() {
       new LoginComponent();
     }).toThrow(
-      `LoginComponent is using untilDestroyed but doesn't implement ngOnDestroy`
+      `LoginComponent is using untilDestroyed but doesn't implement ngOnDestroy`,
     );
   });
 
@@ -128,7 +127,7 @@ describe('it should throw', () => {
     expect(function() {
       new B();
     }).not.toThrow(
-      `B is using untilDestroyed but doesn't implement ngOnDestroy`
+      `B is using untilDestroyed but doesn't implement ngOnDestroy`,
     );
   });
 });
@@ -138,12 +137,13 @@ describe('inheritance', () => {
     const spy = createObserver();
 
     class Parent {
-
       ngOnDestroy() {}
     }
 
     class Child extends Parent {
-      constructor() { super();}
+      constructor() {
+        super();
+      }
       obs = new Subject().pipe(untilDestroyed(this)).subscribe(spy);
     }
 
