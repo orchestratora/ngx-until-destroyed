@@ -17,7 +17,7 @@
     "build:bundles": "rollup -c rollup.config.js",
     "pack": "copyfiles -f src/package.json README.md LICENSE dist",
     "presemantic-release": "npm run build && npm run pack",
-    "semantic-release": "cd dist && semantic-release"
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
     "@types/jest": "^23.3.12",
