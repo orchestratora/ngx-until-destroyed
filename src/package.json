@@ -1,6 +1,6 @@
 {
   "name": "@orchestrator/ngx-until-destroyed",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "description": "RxJS operator that unsubscribes from observable on Angular component destruction",
   "license": "MIT",
   "main": "dist/bundles/umd.js",
@@ -20,5 +20,13 @@
   },
   "peerDependencies": {
     "rxjs": "^6.0.0"
-  }
+  },
+  "keywords": [
+    "rxjs",
+    "angular",
+    "operator",
+    "unsubscribe",
+    "destroy",
+    "components"
+  ]
 }
