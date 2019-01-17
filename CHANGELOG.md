@@ -19,7 +19,7 @@ NgxUntilDestroyed - Changelog
 
 * **lib:** reorganize code structure and package gen ([52fc370](https://github.com/orchestratora/ngx-until-destroyed/commit/52fc370))
 
-# [1.0.0](https://github.com/orchestratora/ngx-until-destroyed/compare/v1.0.0) (2019-01-17)
+# [1.0.0](https://github.com/orchestratora/ngx-until-destroyed/releases/tag/v1.0.0) (2019-01-17)
 
 > _NOTE:_ This release is a summary from [original library](https://github.com/NetanelBasal/ngx-take-until-destroy)
 > that was not released under `@orchestrator/ngx-until-destroyed`.  
