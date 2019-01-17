@@ -1,5 +1,12 @@
 # 🤓 Angular - Unsubscribe For Pros 💪
 
+[![Build Status](https://travis-ci.org/orchestratora/ngx-until-destroyed.svg?branch=master)](https://travis-ci.org/orchestratora/ngx-until-destroyed)
+[![Coverage](https://img.shields.io/codecov/c/github/orchestratora/ngx-until-destroyed.svg?maxAge=2592000)](https://codecov.io/gh/orchestratora/ngx-until-destroyed)
+[![Npm](https://img.shields.io/npm/v/@orchestrator/ngx-until-destroyed.svg)](https://www.npmjs.com/package/@orchestrator/ngx-until-destroyed)
+[![Npm Downloads](https://img.shields.io/npm/dt/@orchestrator/ngx-until-destroyed.svg)](https://www.npmjs.com/package/@orchestrator/ngx-until-destroyed)
+![Licence](https://img.shields.io/github/license/orchestratora/ngx-until-destroyed.svg)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+
 > Declarative way to unsubscribe from observables when the component destroyed
 
 ## Installation
