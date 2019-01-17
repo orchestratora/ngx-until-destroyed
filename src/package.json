@@ -3,11 +3,11 @@
   "version": "0.0.0-development",
   "description": "RxJS operator that unsubscribes from observable on Angular component destruction",
   "license": "MIT",
-  "main": "dist/bundles/umd.js",
-  "module": "dist/bundles/esm5.js",
-  "es2015": "dist/bundles/esm2015.js",
-  "typings": "dist/public_api.d.ts",
-  "types": "dist/public_api.d.ts",
+  "main": "bundles/umd.js",
+  "module": "bundles/esm5.js",
+  "es2015": "bundles/esm2015.js",
+  "typings": "public_api.d.ts",
+  "types": "public_api.d.ts",
   "sideEffects": false,
   "maintainers": [
     "Alex Malkevich <malkevich.alex@gmail.com>"
